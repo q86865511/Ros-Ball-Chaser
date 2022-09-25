@@ -1,0 +1,28 @@
+<launch>
+  <!--  設定 turtlebot3 model (環境變數) (沒用)  -->
+    <env
+      name="TURTLEBOT3_MODEL"
+      value="waffle_pi"
+    />
+  <!--  呼叫 gazebo, rviz 的 launch  -->
+    <include
+      file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"
+    />
+    <include
+      file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch"
+    />
+
+  <!--  執行 ball chaser  -->
+    <node
+      name="processer"
+      pkg="ball_chaser"
+      type="image_process.py"
+    />
+      
+    <node
+      name="chaser"
+      pkg="ball_chaser"
+      type="drive_bot.py"
+    />
+      
+</launch>
