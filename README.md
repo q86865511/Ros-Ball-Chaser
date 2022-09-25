@@ -2,6 +2,7 @@
 於Gazebo及Rviz 3D中，利用cv2和ROS實作出一個能夠讓robot追著紅球跑的程式。
 
 # 使用流程
+
 1. red_ball 放到 ~/model_editor_models 中
 
 2.將 ball_chaser 放到 ~/catkin_ws/src 中
